@@ -1,72 +1,110 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: content-box;
-    overflow: hidden;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-nav{
-    width: 100vw;
-    height: 14vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px groove red;
-    font-size: 1.3em;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px groove red;
+  font-size: 1.3em;
 }
-.logo img{
-    margin-left: 50px;
-    margin-top: 10px;
-    width: 120px;
+ul {
+  list-style: none;
+  display: flex;
+  gap: 1em;
 }
-ul{
-    list-style: none;
+ul li a {
+  text-decoration: none;
+  color: rgb(11, 21, 21);
 }
-ul li{
-    display: inline-block;
-    margin-left: 24px;
+.logo img {
+  width: 120px;
 }
-.user{
-    border: 0px;
-    border-radius: 30px;
-    background-color: cadetblue;
+.user {
+  border-radius: 60px;
+  margin-right: 5px;
+  background-color: rgb(31, 189, 195);
+  padding: 10px 10px;
+  font-weight: 500;
+  color: rgb(32, 8, 3);
+}
+.hero {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5em;
+  height: 80vh;
+  width: 100vw;
+}
+.left {
+  font-size: 1.2em;
+  display: flex;
+  min-width: 280px; /* prevents text from being too narrow */
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 83px;
+  flex: 1;
+}
+.left h1 {
+  letter-spacing: 1.8px;
+  word-spacing: 6px;
+  line-height: 1.2em;
+}
+.left p {
+  margin-top: 20px;
+  word-spacing: 3px;
+  letter-spacing: 1.1px;
+  line-height: 1.4em;
+}
+.right {
+  flex: 1;
+  background-image: url(transparent-washing-machine.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  min-height: 500px;
+}
+button {
+  margin-top: 20px;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 40px;
+  background-color: rgb(16, 206, 235);
+  color: rgb(210, 30, 156);
+  font-size: 1.1em;
+  cursor: pointer;
+  display: inline-block;
+}
+
+@media (min-width: 768px) and (max-width: 1200px)
+{
+    .left{
+        font-size: 22px;
+    }
+}
+    
+    
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column; /* stack left over right */
+    text-align: center; /* center text */
+    height: auto; /* let content decide height */
     padding: 20px;
-    margin-right: 30px;
-    font-weight: 500;
-    color: beige;
-}
-.hero{
-    height: 70vh;
-    display: flex;
-justify-content: space-evenly;
-font-size: 1.5em;
-}
-.left{
-    margin-top: 70px;
-}
-.left h1{
-    letter-spacing: 1.6px;
-    word-spacing: 4px;
-    line-height: 2.2cap;
-}
-.left p{
-    margin-top: 20px;
-    word-spacing: 3px;
-    letter-spacing: 1.1px;
-    line-height: 2cap;
-}
-.right{
-    background-image: url(transparent-washing-machine.png);
-    background-repeat: no-repeat;
+  }
+
+  .left {
+    align-items: center; /* center items */
+    padding-left: 0; /* remove large left padding */
+  }
+
+  .right {
+    min-height: 300px; /* smaller background image area */
     background-size: contain;
-    width: 30vw;
-}
-button{
-    padding: 20px;
-    border: 0;
-    border-radius: 40px;
-    background-color: rgb(16, 206, 235);
-    color: rgb(210, 30, 156);
-    font-size: larger;
-    margin-left: 200px;
-    margin-bottom: 200px;
+  }
+
+  button {
+    margin-top: 20px;
+  }
 }
